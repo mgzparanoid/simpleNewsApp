@@ -4,18 +4,20 @@ import "./App.css";
 import Footer from "./components/Footer";
 import SideMenu from "./components/SideMenu";
 import Header from "./components/Header";
-import { Grid } from "@mui/material";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Grid container>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Header />
         <Content />
         <SideMenu />
-      </Grid>
-      <Footer />
-    </div>
+        <Footer />
+      </BrowserRouter>
+    </Provider>
   );
 }
 
