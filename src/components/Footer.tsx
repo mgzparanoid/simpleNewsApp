@@ -1,8 +1,13 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import { CurrentTime } from "../utils/CurrentTime";
+import { setArticlesCount } from "../store/newsSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../store/store";
 
 const Footer: React.FC = () => {
+  const numberOfArticles = useSelector((state: RootState) => state.news.arcticleCount);
+  
   return (
     <Box
       sx={{
@@ -18,7 +23,7 @@ const Footer: React.FC = () => {
           <Grid item xs={5} />
           <Grid item xs={6}>
             <Typography color="white" variant="subtitle1">
-              Number of projects:
+              Number of projects: {numberOfArticles}
             </Typography>
           </Grid>
           <Grid item xs={1} sx={{ float: "right" }}>
