@@ -1,12 +1,6 @@
-import {
-  BottomNavigation,
-  Box,
-  Container,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import getDate from "../utils/getDate";
+import { CurrentTime } from "../utils/getDate";
 
 const Footer: React.FC = () => {
   return (
@@ -21,14 +15,15 @@ const Footer: React.FC = () => {
     >
       <Container maxWidth="lg">
         <Grid container direction="row" alignItems="center">
-          <Grid item xs={3}>
+          <Grid item xs={5} />
+          <Grid item xs={6}>
             <Typography color="white" variant="subtitle1">
-              Footer
+              Number of projects:
             </Typography>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item xs={1} sx={{ float: "right" }}>
             <Typography color="white" variant="subtitle1">
-              {getDate()}
+              <CurrentTime />
             </Typography>
           </Grid>
         </Grid>
