@@ -10,8 +10,5 @@ export const CurrentTime: React.FC = () => {
     };
   }, []);
 
-  const currentTime =
-    time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
-
-  return <h5>{currentTime}</h5>;
+  return <h5>{time.toLocaleTimeString()}</h5>;
 };
