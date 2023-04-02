@@ -1,6 +1,6 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import { CurrentTime } from "../utils/getDate";
+import { CurrentTime } from "../utils/CurrentTime";
 
 const Footer: React.FC = () => {
   return (
